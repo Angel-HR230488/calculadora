@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora IVA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <h1 class="display-5 fw-bold">Calculadora de IVA</h1>
+      <p class="text-muted">Agrega o quita el IVA de un monto fácilmente</p>
+    </div>
+    <div class="card p-4 shadow-lg rounded-4">
+      <div class="mb-3">
+        <label for="amount" class="form-label fw-semibold">Ingrese el monto</label>
+        <input type="number" id="amount" class="form-control form-control-lg" placeholder="Ej: 200" />
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Seleccione una opción</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ivaOption" id="addIva" value="add" checked />
+          <label class="form-check-label" for="addIva">Agregar IVA</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ivaOption" id="removeIva" value="remove" />
+          <label class="form-check-label" for="removeIva">Quitar IVA</label>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg w-100" onclick="calculate()">Calcular</button>
+      <div id="results" class="mt-4 d-none">
+        <div class="alert alert-success rounded-3" role="alert">
+          <p class="mb-1"><strong>Resultado numérico:</strong> <span id="numericResult"></span></p>
+          <p class="mb-0"><strong>Resultado en letras:</strong> <span id="textResult"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

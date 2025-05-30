@@ -1,0 +1,23 @@
+$primary: #0d6efd;
+$background: #f8f9fa;
+$text: #212529;
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $background;
+  color: $text;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-control-lg {
+  font-size: 1.25rem;
+}
+
+.alert {
+  font-size: 1.1rem;
+}
