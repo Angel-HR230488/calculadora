@@ -1,8 +1,12 @@
 
+$primary-color: #0d6efd;
+$success-light: #d1f5d3;
+
 body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 1.15rem;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
 input, button, label {
