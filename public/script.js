@@ -43,6 +43,7 @@ function calculate() {
   const amount = parseFloat(document.getElementById("amount").value);
   const option = document.querySelector('input[name="ivaOption"]:checked').value;
   const resultDiv = document.getElementById("results");
+  const ivaResult = document.getElementById("ivaResult");
   const numericResult = document.getElementById("numericResult");
   const textResult = document.getElementById("textResult");
 
@@ -61,7 +62,8 @@ function calculate() {
     iva = amount - finalAmount;
   }
 
-  numericResult.innerText = `Monto: $${finalAmount.toFixed(2)} | IVA: $${iva.toFixed(2)}`;
+  ivaResult.innerText = `$${iva.toFixed(2)}`;
+  numericResult.innerText = `$${finalAmount.toFixed(2)}`;
   textResult.innerText = numberToWordsES(finalAmount);
   resultDiv.classList.remove("d-none");
 }
