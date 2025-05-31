@@ -1,9 +1,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 input, button, label {
@@ -17,4 +16,10 @@ input, button, label {
   background-color: #d1f5d3;
   border-left: 5px solid #28a745;
   border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.result-box.show {
+  opacity: 1;
 }

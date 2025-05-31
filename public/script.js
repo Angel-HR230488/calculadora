@@ -65,5 +65,13 @@ function calculate() {
   ivaResult.innerText = `$${iva.toFixed(2)}`;
   numericResult.innerText = `$${finalAmount.toFixed(2)}`;
   textResult.innerText = numberToWordsES(finalAmount);
+
   resultDiv.classList.remove("d-none");
+  resultDiv.classList.add("show");
+}
+
+function clearAll() {
+  document.getElementById("amount").value = "";
+  document.getElementById("results").classList.add("d-none");
+  document.getElementById("results").classList.remove("show");
 }

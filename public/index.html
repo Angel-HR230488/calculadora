@@ -8,19 +8,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-light">
-  <div class="container py-5">
-    <div class="text-center mb-4">
-      <h1 class="display-4 fw-bold">Calculadora de IVA</h1>
-      <p class="text-muted fs-4">Agrega o quita el IVA de un monto fácilmente</p>
-    </div>
-    <div class="card p-4 shadow-lg rounded-4">
-      <div class="mb-4">
-        <label for="amount" class="form-label fw-semibold fs-4">Ingrese el monto</label>
+<body class="bg-light text-dark" id="body">
+  <div class="container py-5 d-flex justify-content-center">
+    <div class="card p-4 shadow-lg rounded-4 w-100" style="max-width: 600px;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h3 fw-bold m-0">Calculadora de IVA</h1>
+        <button class="btn btn-sm btn-outline-secondary" onclick="toggleTheme()">🌙</button>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label fw-semibold">Ingrese el monto</label>
         <input type="number" inputmode="decimal" id="amount" class="form-control form-control-lg" placeholder="Ej: 200" />
       </div>
-      <div class="mb-4">
-        <label class="form-label fw-semibold fs-4">Seleccione una opción</label>
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Seleccione una opción</label>
         <div class="d-flex gap-3">
           <input type="radio" class="btn-check" name="ivaOption" id="addIva" value="add" autocomplete="off" checked>
           <label class="btn btn-outline-primary btn-lg" for="addIva">Agregar IVA</label>
@@ -29,8 +29,11 @@
           <label class="btn btn-outline-danger btn-lg" for="removeIva">Quitar IVA</label>
         </div>
       </div>
-      <button class="btn btn-primary btn-lg w-100" onclick="calculate()">Calcular</button>
-      <div id="results" class="result-box d-none mt-4">
+      <div class="d-flex gap-3">
+        <button class="btn btn-primary btn-lg w-100" onclick="calculate()">Calcular</button>
+        <button class="btn btn-outline-secondary btn-lg" onclick="clearAll()">Limpiar</button>
+      </div>
+      <div id="results" class="result-box d-none mt-4 animate-fade">
         <p class="mb-2 fw-bold">Resultado numérico:</p>
         <ul class="mb-3">
           <li><strong>IVA:</strong> <span id="ivaResult"></span></li>
@@ -51,6 +54,19 @@
           .then(reg => console.log('Service Worker registrado:', reg.scope))
           .catch(err => console.error('Error al registrar el Service Worker:', err));
       });
+    }
+
+    // Modo oscuro automático
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.remove('bg-light', 'text-dark');
+      document.body.classList.add('bg-dark', 'text-light');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('bg-dark');
+      document.body.classList.toggle('text-light');
+      document.body.classList.toggle('bg-light');
+      document.body.classList.toggle('text-dark');
     }
   </script>
 </body>
