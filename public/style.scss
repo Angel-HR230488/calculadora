@@ -1,0 +1,32 @@
+// 1) Variables propias (opcional, en caso de que quieras personalizar colores)
+/* Puedes comentarlas si no las usarás */
+/*
+$primary-color: #0d6efd;
+$success-light: #d1f5d3;
+*/
+
+// 2) Tipografía base (si quieres algo distinto de la fuente por defecto de Bootstrap)
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.15rem; // Bootstrap usa 1rem = 16px; 1.15rem ≈ 18px
+  background-color: #ffffff; // nos aseguramos de fondo blanco puro
+  color: #212529; // texto oscuro (Bootstrap default)
+}
+
+// 3) Ajuste para inputs, buttons y labels (aunque Bootstrap cubre casi todo)
+input,
+button,
+label {
+  font-size: 1.2rem !important;
+}
+
+// 4) Si aún quieres un poco de espacio extra dentro de .card (opcional)
+.card {
+  padding: 1rem; // ya tienes .card-body, pero esto refuerza algo de padding
+}
+
+// 5) Nada más. El resto lo deja Bootstrap en paz.
+//
+// -> Tras compilar style.scss, genera style.css y súbelo tal cual.
+// -> Si no quieres usar SCSS, renómbralo a style.css, quita el bloque de variables
+//    y mantén solo la parte de tipografía y tamaño de fuente.
