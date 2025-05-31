@@ -1,6 +1,6 @@
 {
   "name": "Calculadora de IVA",
-  "short_name": "IVA Calc",
+  "short_name": "IVA",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f8f9fa",

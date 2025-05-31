@@ -1,4 +1,4 @@
-const CACHE_NAME = 'iva-calc-v1';
+const CACHE_NAME = 'iva-calc-v2';
 const urlsToCache = [
   './',
   './index.html',
